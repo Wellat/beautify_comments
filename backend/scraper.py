@@ -163,13 +163,19 @@ def build_comment_tree(comments: List[Dict]) -> List[Dict]:
 import os
 import hashlib
 
-def get_jisilu_data(url: str):
+def get_jisilu_data(url: str, force_update: bool = False):
     # Cache key based on URL
     url_hash = hashlib.md5(url.encode()).hexdigest()
-    cache_file = f"cache_{url_hash}.html"
+    
+    # Ensure cache directory exists
+    cache_dir = "cache"
+    if not os.path.exists(cache_dir):
+        os.makedirs(cache_dir)
+        
+    cache_file = os.path.join(cache_dir, f"cache_{url_hash}.html")
     
     html_content = ""
-    if os.path.exists(cache_file):
+    if not force_update and os.path.exists(cache_file):
         print(f"Loading from cache: {cache_file}")
         with open(cache_file, 'r', encoding='utf-8') as f:
             html_content = f.read()
