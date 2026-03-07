@@ -26,34 +26,26 @@ function App() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get('http://localhost:8080/api/history');
+      const res = await axios.get(import.meta.env.BASE_URL + 'data/index.json');
       setHistory(res.data);
     } catch (err) {
       console.error("Failed to fetch history", err);
     }
   };
 
-  const fetchArticle = async (id, forceUpdate = false) => {
+  const fetchArticle = async (id) => {
     if (!id) return;
     
     setLoading(true);
     setError(null);
-    // Don't clear data immediately if updating, so user still sees old content while loading?
-    // Actually, maybe better to show loading state clearly.
-    if (!forceUpdate) setData(null);
+    setData(null);
 
     try {
-      const response = await axios.get(`http://localhost:8080/api/parse`, {
-        params: { 
-          article_id: id,
-          force_update: forceUpdate
-        }
-      });
+      // Add timestamp to prevent browser caching when re-fetching
+      const response = await axios.get(`${import.meta.env.BASE_URL}data/${id}.json?t=${new Date().getTime()}`);
       setData(response.data);
-      // Refresh history to include new item or update title
-      fetchHistory();
     } catch (err) {
-      setError(err.response?.data?.detail || err.message || '发生未知错误');
+      setError('文章未收录，请在 GitHub Actions 中手动触发更新');
     } finally {
       setLoading(false);
     }
@@ -63,7 +55,7 @@ function App() {
     e.preventDefault();
     const id = extractId(inputId);
     if (id) {
-      fetchArticle(id, false);
+      fetchArticle(id);
     } else {
       setError("请输入有效的文章ID或链接");
     }
@@ -90,7 +82,7 @@ function App() {
               {history.map((item) => (
                 <li key={item.id}>
                   <button
-                    onClick={() => fetchArticle(item.id, false)}
+                    onClick={() => fetchArticle(item.id)}
                     className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors hover:bg-blue-50 group ${data?.id === item.id ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-600'}`}
                   >
                     <div className="truncate">
@@ -175,19 +167,7 @@ function App() {
             {data && (
               <div className="space-y-8 animate-fade-in pb-20">
                 <article className="bg-white p-6 md:p-10 rounded-xl shadow-sm border border-gray-100 relative group">
-                  {/* Update Button */}
-                  <div className="absolute top-6 right-6">
-                    <button
-                      onClick={() => fetchArticle(data.id, true)}
-                      disabled={loading}
-                      className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-gray-500 bg-gray-50 hover:bg-blue-50 hover:text-blue-600 rounded-md border border-gray-200 transition-all disabled:opacity-50"
-                      title="如果不走缓存，强制从服务器拉取最新内容"
-                    >
-                      <RefreshCw size={14} className={loading ? 'animate-spin' : ''} />
-                      {loading ? '更新中...' : '强制更新'}
-                    </button>
-                  </div>
-
+                  
                   <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 pr-24 leading-tight">{data.title}</h1>
                   
                   <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-8 border-b border-gray-100 pb-4">
