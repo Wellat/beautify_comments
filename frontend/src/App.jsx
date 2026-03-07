@@ -26,7 +26,7 @@ function App() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get(import.meta.env.BASE_URL + 'data/index.json');
+      const res = await axios.get(import.meta.env.BASE_URL + 'data/index.json?t=' + new Date().getTime());
       setHistory(res.data);
     } catch (err) {
       console.error("Failed to fetch history", err);
