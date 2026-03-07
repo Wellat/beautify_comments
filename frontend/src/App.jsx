@@ -109,7 +109,7 @@ function App() {
               <Menu size={20} />
             </button>
             
-            <h1 className="text-lg font-bold text-blue-600 tracking-tight hidden md:block">集思录评论盖楼</h1>
+            <h1 className="text-lg font-bold text-blue-600 tracking-tight hidden md:block">Jisilu评论美化</h1>
 
             <form onSubmit={handleSubmit} className="flex-1 max-w-lg ml-4 flex gap-2">
               <div className="relative flex-1">
@@ -175,7 +175,8 @@ function App() {
                     <span className="flex items-center gap-1">
                       {data.publish_time}
                     </span>
-                    <span className="font-mono text-xs text-gray-300">ID: {data.id}</span>
+                    <a href={"https://www.jisilu.cn/question/" + data.id} target="_blank" className="text-blue-600 hover:underline">原文链接</a>
+                    {/* <span className="font-mono text-xs text-gray-300">ID: {data.id}</span> */}
                   </div>
                   
                   <div 
