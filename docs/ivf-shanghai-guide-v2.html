@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>上海一代试管婴儿完整指南（v2）</title>
+<style>
+  :root {
+    --primary: #4A6CF7;
+    --primary-light: #E8EDFF;
+    --primary-dark: #2D4ED8;
+    --accent: #F59E0B;
+    --accent-light: #FEF3C7;
+    --success: #10B981;
+    --success-light: #D1FAE5;
+    --danger: #EF4444;
+    --danger-light: #FEE2E2;
+    --text: #1E293B;
+    --text-secondary: #64748B;
+    --bg: #F8FAFC;
+    --card: #FFFFFF;
+    --border: #E2E8F0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #4A6CF7 0%, #7C3AED 50%, #EC4899 100%);
+    color: white;
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  .hero h1 { font-size: 2.5rem; font-weight: 800; position: relative; margin-bottom: 12px; }
+  .hero .subtitle { font-size: 1.15rem; opacity: 0.9; position: relative; max-width: 600px; margin: 0 auto; }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  .toc {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    padding: 32px;
+    margin: -30px auto 40px;
+    position: relative; z-index: 1;
+    max-width: 960px;
+    border: 1px solid var(--border);
+  }
+  .toc h2 { font-size: 1.25rem; margin-bottom: 16px; color: var(--primary); }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 8px 0; }
+  .toc a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+  .toc a:hover { color: var(--primary); }
+
+  section { margin-bottom: 48px; }
+  section > h2 {
+    font-size: 1.6rem; font-weight: 700; color: var(--primary-dark);
+    margin-bottom: 20px; padding-bottom: 10px;
+    border-bottom: 3px solid var(--primary-light);
+    display: flex; align-items: center; gap: 10px;
+  }
+  section > h2 .icon { font-size: 1.4rem; }
+
+  h3 { font-size: 1.2rem; font-weight: 600; color: var(--text); margin: 24px 0 12px; }
+
+  .card {
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 24px; margin-bottom: 20px;
+    border: 1px solid var(--border); transition: box-shadow 0.2s;
+  }
+  .card:hover { box-shadow: var(--shadow-lg); }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+
+  .tag {
+    display: inline-block; padding: 3px 10px; border-radius: 12px;
+    font-size: 0.8rem; font-weight: 600; margin-right: 6px;
+  }
+  .tag-primary { background: var(--primary-light); color: var(--primary-dark); }
+  .tag-success { background: var(--success-light); color: #059669; }
+  .tag-accent { background: var(--accent-light); color: #B45309; }
+  .tag-danger { background: var(--danger-light); color: var(--danger); }
+  .tag-neutral { background: #F1F5F9; color: #475569; }
+
+  .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: var(--radius); border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th {
+    background: var(--primary-light); color: var(--primary-dark);
+    font-weight: 600; padding: 12px 16px; text-align: left; white-space: nowrap;
+  }
+  td { padding: 10px 16px; border-top: 1px solid var(--border); }
+  tr:hover td { background: #F8FAFC; }
+
+  .hospital-card {
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 2px solid var(--border);
+    overflow: hidden; margin-bottom: 24px;
+  }
+  .hospital-header { padding: 24px; color: white; position: relative; }
+  .hospital-header.h1-gradient { background: linear-gradient(135deg, #4A6CF7, #7C3AED); }
+  .hospital-header.h2-gradient { background: linear-gradient(135deg, #10B981, #059669); }
+  .hospital-header.h3-gradient { background: linear-gradient(135deg, #F59E0B, #D97706); }
+  .hospital-header h3 { color: white; font-size: 1.3rem; margin: 0 0 8px; }
+  .hospital-header p { opacity: 0.9; font-size: 0.95rem; }
+  .hospital-body { padding: 24px; }
+  .hospital-rank {
+    position: absolute; top: 16px; right: 20px;
+    background: rgba(255,255,255,0.25); border-radius: 50%;
+    width: 40px; height: 40px; display: flex; align-items: center;
+    justify-content: center; font-weight: 800; font-size: 1.1rem;
+  }
+
+  .rate-bar { height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden; margin: 6px 0; }
+  .rate-bar-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 11px; top: 0; bottom: 0;
+    width: 3px; background: linear-gradient(to bottom, var(--primary), var(--accent));
+    border-radius: 2px;
+  }
+  .timeline-item { position: relative; margin-bottom: 28px; }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -27px; top: 6px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--primary); border: 3px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--primary);
+  }
+  .timeline-item h4 { font-size: 1.05rem; color: var(--primary-dark); margin-bottom: 6px; }
+  .timeline-item .duration { font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; margin-bottom: 4px; }
+
+  .alert {
+    border-radius: var(--radius); padding: 16px 20px; margin: 16px 0;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .alert-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .alert-info { background: #EFF6FF; border-left: 4px solid #3B82F6; }
+  .alert-warn { background: #FEF3C7; border-left: 4px solid #F59E0B; }
+  .alert-success { background: #D1FAE5; border-left: 4px solid #10B981; }
+  .alert-danger { background: #FEE2E2; border-left: 4px solid #EF4444; }
+
+  .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; }
+  .stat-box {
+    flex: 1; min-width: 140px; background: var(--card);
+    border-radius: var(--radius); padding: 20px; text-align: center;
+    border: 1px solid var(--border); box-shadow: var(--shadow);
+  }
+  .stat-box .num { font-size: 1.6rem; font-weight: 800; color: var(--primary); line-height: 1.2; }
+  .stat-box .label { font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px; }
+
+  .doctor-item { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .doctor-item:last-child { border-bottom: none; }
+  .doctor-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--primary-light); display: flex; align-items: center;
+    justify-content: center; font-weight: 700; color: var(--primary); font-size: 1rem; flex-shrink: 0;
+  }
+  .doctor-info { flex: 1; }
+  .doctor-name { font-weight: 600; font-size: 1rem; }
+  .doctor-title { font-size: 0.85rem; color: var(--text-secondary); }
+  .doctor-specialty { font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px; }
+
+  .checklist { list-style: none; padding: 0; }
+  .checklist li { padding: 8px 0; display: flex; align-items: flex-start; gap: 10px; }
+  .checklist li::before {
+    content: ''; display: inline-block; width: 18px; height: 18px;
+    border: 2px solid var(--primary); border-radius: 4px; flex-shrink: 0; margin-top: 3px;
+  }
+
+  footer {
+    text-align: center; padding: 40px 24px; color: var(--text-secondary);
+    font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 40px;
+  }
+
+  .hospital-suit {
+    padding: 16px 20px; border-radius: var(--radius); margin: 12px 0;
+    border-left: 4px solid var(--primary); background: #F8FAFC;
+  }
+  .hospital-suit h4 { margin: 0 0 8px; color: var(--primary-dark); }
+  .hospital-suit .pros { color: var(--success); font-weight: 500; }
+  .hospital-suit .cons { color: #B45309; font-weight: 500; }
+  .hospital-suit .suit { color: var(--primary); font-weight: 600; margin-top: 4px; }
+
+  .section-divider {
+    border: none; border-top: 2px dashed var(--border);
+    margin: 32px 0;
+  }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 1.8rem; }
+    .card-grid { grid-template-columns: 1fr; }
+    .stat-row { flex-direction: column; }
+    .toc { margin: -20px 16px 30px; padding: 20px; }
+  }
+  @media print {
+    .hero { padding: 40px 24px; }
+    .card:hover { box-shadow: var(--shadow); }
+    .no-print { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">2026年5月 v2</div>
+  <h1>上海一代试管婴儿完整指南</h1>
+  <p class="subtitle">基于患者经验分享、好大夫在线公开评价、医疗资料综合整理。成功率等数据为行业统计参考值，不同统计口径差异较大，请以医院官方信息为准。</p>
+</div>
+
+<div class="container">
+  <div class="toc">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#what">什么是一代试管</a></li>
+      <li><a href="#success">影响试管成功率的核心因素</a></li>
+      <li><a href="#hospitals">上海第一梯队生殖中心</a></li>
+      <li><a href="#choose">不同医院适合不同人群</a></li>
+      <li><a href="#doctors">医生参考</a></li>
+      <li><a href="#lab">实验室：IVF 的隐形核心</a></li>
+      <li><a href="#process">完整流程与时间表</a></li>
+      <li><a href="#checks">前置检查清单</a></li>
+      <li><a href="#cost">费用明细与医保</a></li>
+      <li><a href="#tips">注意事项与患者经验</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1: What is IVF -->
+  <section id="what">
+    <h2><span class="icon">1</span> 什么是一代试管婴儿</h2>
+    <div class="card">
+      <p><strong>第一代试管婴儿（IVF-ET，体外受精-胚胎移植）</strong> 是将卵子和精子取出后，在实验室培养皿中自然结合受精，再将胚胎移植回子宫的技术。它是最基础、应用最广的辅助生殖技术。</p>
+      <p style="margin-top:10px;color:var(--text-secondary);font-size:0.95rem;">一代试管要求男方精液达到基本受精能力。如果男方精液严重异常，通常建议直接做二代（ICSI）。</p>
+    </div>
+
+    <h3>适应症</h3>
+    <div class="card-grid">
+      <div class="card">
+        <strong>输卵管因素</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">输卵管堵塞、积水、通而极不畅等（最常见适应症）</p>
+        <span class="tag tag-primary">最常见</span>
+      </div>
+      <div class="card">
+        <strong>排卵障碍</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">多囊卵巢综合征、卵巢功能减退等促排困难的情况</p>
+      </div>
+      <div class="card">
+        <strong>子宫内膜异位症</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">中重度子宫内膜异位症导致不孕</p>
+      </div>
+      <div class="card">
+        <strong>不明原因不孕</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">各项检查正常但长期未能自然受孕</p>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      <span class="alert-icon">💡</span>
+      <div><strong>一代 vs 二代 vs 三代</strong><br>
+        一代 = 精卵自然结合（适用于女方因素为主，男方精液基本正常）；<br>
+        二代 = 单精子注射 ICSI（适用于男方精液异常或受精障碍）；<br>
+        三代 = 胚胎植入前基因检测 PGT（适用于遗传病筛查）。<br>
+        <strong>你的情况（输卵管通而极不畅，男方精液正常）适合一代试管。</strong>
+        但实际治疗中，医生可能根据取卵当天精液情况临时调整为二代。
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Success factors -->
+  <section id="success">
+    <h2><span class="icon">2</span> 影响试管成功率的核心因素</h2>
+    <p style="color:var(--text-secondary);margin-bottom:20px;">很多患者过度纠结医院选择，实际上以下因素对结果的影响更大。</p>
+
+    <div class="card">
+      <h3 style="margin-top:0;">第一因素：年龄</h3>
+      <p>年龄是影响试管婴儿结果<strong>最重要的单一因素</strong>，没有任何医院或医生能突破年龄带来的生理限制。</p>
+      <div class="table-wrap" style="margin-top:12px;">
+        <table>
+          <thead><tr><th>年龄段</th><th>单次移植临床妊娠率趋势</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td><strong>&lt;35 岁</strong></td><td>较高（约 50-65%）</td><td>卵子质量好，胚胎染色体异常率低</td></tr>
+            <tr><td><strong>35-37 岁</strong></td><td>开始下降</td><td>卵巢储备开始减少，但仍有机会</td></tr>
+            <tr><td><strong>38-40 岁</strong></td><td>明显下降</td><td>卵子质量下降明显，流产率升高</td></tr>
+            <tr><td><strong>&gt;40 岁</strong></td><td>快速下降</td><td>可能需要考虑供卵方案</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;">第二因素：卵巢储备（AMH / AFC）</h3>
+      <p>AMH（抗缪勒管激素）和 AFC（基础卵泡数）决定了每次取卵能取到多少个卵子。取卵数越多，可用胚胎数越多，累计成功率越高。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;">第三因素：胚胎质量</h3>
+      <p>这取决于卵子质量（主要由年龄决定）和精子质量。优质胚胎的着床率远高于一般胚胎。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;">关于"成功率"的理性提醒</h3>
+      <div class="alert alert-warn" style="margin:12px 0 0;">
+        <span class="alert-icon">⚠️</span>
+        <div>IVF 成功率至少有 5 种统计口径：<strong>取卵周期妊娠率、移植周期妊娠率、临床妊娠率（看到孕囊）、活产率（最终抱娃）、累计活产率</strong>。很多宣传中的"60% 成功率"实际上是"优质患者的单次移植临床妊娠率"，不等于最终抱娃率。不同医院之间的数据因统计口径不同，不一定能直接横向比较。对于你而言，年龄（34 岁）和卵巢储备往往比"医院宣传的成功率"更重要。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Hospitals -->
+  <section id="hospitals">
+    <h2><span class="icon">3</span> 上海第一梯队生殖中心</h2>
+    <p style="color:var(--text-secondary);margin-bottom:20px;">以下医院均为公立三甲，具备国家批准的辅助生殖技术资质。它们属于上海辅助生殖领域的第一梯队，各有侧重，不存在绝对的高下之分。各院"成功率"因统计口径不同，以下数据为行业参考范围，仅供参考。</p>
+
+    <!-- Hospital 1: 九院 -->
+    <div class="hospital-card">
+      <div class="hospital-header h1-gradient">
+        <h3>上海第九人民医院（九院）</h3>
+        <p>辅助生殖科 · 匡延平团队</p>
+      </div>
+      <div class="hospital-body">
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="num">50-60%</div>
+            <div class="label">单次移植临床妊娠率（参考范围）</div>
+            <div class="rate-bar"><div class="rate-bar-fill" style="width:55%;background:linear-gradient(90deg,#4A6CF7,#7C3AED);"></div></div>
+          </div>
+          <div class="stat-box">
+            <div class="num">7000+</div>
+            <div class="label">年取卵周期（量级）</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">2003年</div>
+            <div class="label">建科年份</div>
+          </div>
+        </div>
+
+        <h3>特点</h3>
+        <ul class="checklist">
+          <li>匡延平团队创立<strong>"上海方法"（PPOS，孕激素控制促排卵方案）</strong>，可显著降低 OHSS 风险，获卵率高，在国际上有学术影响力</li>
+          <li>年取卵周期数在上海各院中居前，医生团队规模大，经验丰富</li>
+          <li>玻璃化冷冻技术成熟，冻胚移植成功率稳定</li>
+          <li>性价比突出，促排方案灵活</li>
+        </ul>
+
+        <h3>患者反馈</h3>
+        <div class="alert alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>不足：</strong>患者数量极多，就诊体验偏"流水线"，排队等候时间长，医患沟通时间相对有限。</div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <span class="tag tag-primary">PPOS方案</span>
+          <span class="tag tag-success">量大经验足</span>
+          <span class="tag tag-neutral">排队较长</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hospital 2: 仁济 -->
+    <div class="hospital-card">
+      <div class="hospital-header h2-gradient">
+        <h3>上海交通大学医学院附属仁济医院</h3>
+        <p>生殖医学中心 · 洪燕/孙贇团队</p>
+      </div>
+      <div class="hospital-body">
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="num">55-60%</div>
+            <div class="label">单次移植临床妊娠率（参考范围）</div>
+            <div class="rate-bar"><div class="rate-bar-fill" style="width:57%;background:linear-gradient(90deg,#10B981,#059669);"></div></div>
+          </div>
+          <div class="stat-box">
+            <div class="num">40万+</div>
+            <div class="label">年门诊量（量级）</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">国际认证</div>
+            <div class="label">DNV GL & RTAC</div>
+          </div>
+        </div>
+
+        <h3>特点</h3>
+        <ul class="checklist">
+          <li>2001 年建科，国内较早开展辅助生殖技术的中心</li>
+          <li>国内首家通过 <strong>DNV GL & RTAC 辅助生殖专项国际认证</strong>（2019年），质量管理体系规范</li>
+          <li>可开展一代/二代/三代试管婴儿及人工授精</li>
+          <li>北院、南院等多个院区，分散患者流量</li>
+          <li>生殖医学科研实力强</li>
+        </ul>
+
+        <h3>患者反馈</h3>
+        <div class="alert alert-info">
+          <span class="alert-icon">👍</span>
+          <div>北院区建档流程清晰，有专门的门诊攻略；整体服务规范，医生专业度高。</div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <span class="tag tag-primary">国际认证</span>
+          <span class="tag tag-success">体系规范</span>
+          <span class="tag tag-neutral">多院区</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hospital 3: 红房子 -->
+    <div class="hospital-card">
+      <div class="hospital-header h3-gradient">
+        <h3>复旦大学附属妇产科医院（红房子）</h3>
+        <p>生殖中心</p>
+      </div>
+      <div class="hospital-body">
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="num">55-60%</div>
+            <div class="label">单次移植临床妊娠率（参考范围）</div>
+            <div class="rate-bar"><div class="rate-bar-fill" style="width:57%;background:linear-gradient(90deg,#F59E0B,#D97706);"></div></div>
+          </div>
+          <div class="stat-box">
+            <div class="num">年周期过万</div>
+            <div class="label">量级</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">1884年</div>
+            <div class="label">医院历史</div>
+          </div>
+        </div>
+
+        <h3>特点</h3>
+        <ul class="checklist">
+          <li>华东地区重要的生殖医学中心之一，年周期数居前</li>
+          <li>诞生了<strong>华东第一例试管婴儿</strong>、上海第一例第三代试管婴儿</li>
+          <li>科研实力突出，在遗传学诊断和 PGT 领域有优势</li>
+          <li>历史悠久（1884年建院），妇产科综合实力全国领先</li>
+        </ul>
+
+        <h3>患者反馈</h3>
+        <div class="alert alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>有患者反映服务体验一般、硬件相对老旧、排队时间长。但技术实力毋庸置疑。</div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <span class="tag tag-primary">历史底蕴</span>
+          <span class="tag tag-success">遗传学强</span>
+          <span class="tag tag-neutral">排队较长</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hospital 4: 国妇婴 -->
+    <div class="hospital-card">
+      <div class="hospital-header" style="background:linear-gradient(135deg,#8B5CF6,#6D28D9);">
+        <h3>中国福利会国际和平妇幼保健院（国妇婴）</h3>
+        <p>生殖医学中心</p>
+      </div>
+      <div class="hospital-body">
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="num">可三代</div>
+            <div class="label">技术覆盖</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">口碑好</div>
+            <div class="label">患者评价</div>
+          </div>
+        </div>
+
+        <h3>特点</h3>
+        <ul class="checklist">
+          <li>可开展一代/二代/三代试管婴儿及供卵试管</li>
+          <li>患者反馈服务体验较好</li>
+        </ul>
+
+        <div style="margin-top:12px;">
+          <span class="tag tag-success">服务好</span>
+          <span class="tag tag-neutral">技术全</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hospital 5: 一妇婴 -->
+    <div class="hospital-card">
+      <div class="hospital-header" style="background:linear-gradient(135deg,#06B6D4,#0891B2);">
+        <h3>上海市第一妇婴保健院（一妇婴）</h3>
+        <p>辅助生殖医学科 · 滕晓明团队</p>
+      </div>
+      <div class="hospital-body">
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="num">人性化</div>
+            <div class="label">服务特色</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">精细化</div>
+            <div class="label">流程管理</div>
+          </div>
+        </div>
+
+        <h3>特点</h3>
+        <ul class="checklist">
+          <li>特色在于精细化流程管理和人性化服务</li>
+          <li>滕晓明为中华医学会生殖医学分会重要成员</li>
+        </ul>
+
+        <div style="margin-top:12px;">
+          <span class="tag tag-success">服务好</span>
+          <span class="tag tag-neutral">流程精细</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other hospitals -->
+    <h3>其他具备资质的公立三甲</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>医院</th><th>技术</th><th>特点</th></tr></thead>
+        <tbody>
+          <tr><td>瑞金医院</td><td>一代/二代</td><td>综合三甲，男性不育诊疗有特色</td></tr>
+          <tr><td>长征医院</td><td>一代/二代/三代</td><td>军工系三甲，技术全面</td></tr>
+          <tr><td>第六人民医院</td><td>一代/二代</td><td>近年发展较快</td></tr>
+          <tr><td>第十人民医院</td><td>一代/二代</td><td>同济大学附属</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 4: Choose hospital by profile -->
+  <section id="choose">
+    <h2><span class="icon">4</span> 不同医院适合不同人群</h2>
+    <p style="color:var(--text-secondary);margin-bottom:20px;">与其纠结"哪家最好"，不如选择"最适合自己情况"的医院。</p>
+
+    <div class="hospital-suit">
+      <h4>九院</h4>
+      <p><span class="pros">优势：</span>促排方案灵活、经验丰富、性价比高、PPOS 方案降低 OHSS 风险</p>
+      <p><span class="cons">不足：</span>流水线感明显，医患沟通时间有限，排队时间长</p>
+      <p class="suit">适合：年轻、卵巢储备尚可、目标效率、能接受排队的人</p>
+    </div>
+
+    <div class="hospital-suit">
+      <h4>仁济医院</h4>
+      <p><span class="pros">优势：</span>体系规范、国际认证、多院区分流、综合服务能力强</p>
+      <p><span class="cons">不足：</span>北院/南院之间可能涉及跨院区就诊</p>
+      <p class="suit">适合：希望流程规范、综合管理、注重质量体系认证的人</p>
+    </div>
+
+    <div class="hospital-suit">
+      <h4>红房子</h4>
+      <p><span class="pros">优势：</span>遗传学诊断强、高难度病例多、妇产科综合实力全国领先</p>
+      <p><span class="cons">不足：</span>排队时间长，硬件相对老旧</p>
+      <p class="suit">适合：反复移植失败、遗传问题筛查、高龄需要综合妇产科支持的人</p>
+    </div>
+
+    <div class="hospital-suit">
+      <h4>国妇婴 / 一妇婴</h4>
+      <p><span class="pros">优势：</span>服务体验较好，流程精细化</p>
+      <p class="suit">适合：注重就医体验和医患沟通的人</p>
+    </div>
+  </section>
+
+  <!-- Section 5: Doctors -->
+  <section id="doctors">
+    <h2><span class="icon">5</span> 医生参考</h2>
+    <p style="color:var(--text-secondary);margin-bottom:12px;">以下医生均为副主任医师及以上或在生殖领域有一定知名度，按医院分组。<strong>IVF 的成败很大程度上取决于实验室团队和整体协作，而非单一医生个人。</strong></p>
+
+    <div class="alert alert-info">
+      <span class="alert-icon">📋</span>
+      <div><strong>说明：</strong>以下信息基于医生职称、学术地位和患者公开评价整理，不代表疗效排名。医生门诊时间和号源可能变动，请以医院官方信息为准。</div>
+    </div>
+
+    <!-- 九院医生 -->
+    <div class="card">
+      <h3 style="margin-top:0;">上海九院 · 辅助生殖科</h3>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">匡</div>
+        <div class="doctor-info">
+          <div class="doctor-name">匡延平 <span class="tag tag-primary">主任医师</span> <span class="tag tag-accent">学科带头人</span></div>
+          <div class="doctor-title">教授 / 博士生导师 / 科室主任</div>
+          <div class="doctor-specialty">"上海方法"（PPOS）创始人，国际上有学术影响力</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">张</div>
+        <div class="doctor-info">
+          <div class="doctor-name">张韶珍 <span class="tag tag-primary">主任医师</span></div>
+          <div class="doctor-specialty">临床经验丰富</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">蔡</div>
+        <div class="doctor-info">
+          <div class="doctor-name">蔡任飞 <span class="tag tag-primary">副主任医师</span></div>
+          <div class="doctor-specialty">擅长超促排卵方案</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">郭</div>
+        <div class="doctor-info">
+          <div class="doctor-name">郭海燕 <span class="tag tag-primary">副主任医师</span></div>
+          <div class="doctor-specialty">反复移植失败、卵子障碍、多囊卵巢</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">朱</div>
+        <div class="doctor-info">
+          <div class="doctor-name">朱艳雯 <span class="tag tag-primary">副主任医师</span></div>
+          <div class="doctor-specialty">活跃于患者社区科普</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">陈</div>
+        <div class="doctor-info">
+          <div class="doctor-name">陈秋菊 <span class="tag tag-primary">副主任医师</span></div>
+          <div class="doctor-specialty">擅长生殖科就诊流程指导</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">汪</div>
+        <div class="doctor-info">
+          <div class="doctor-name">汪云 <span class="tag tag-neutral">医生</span></div>
+          <div class="doctor-specialty">从事辅助生殖技术 20 余年，擅长多种个性化促排卵方案</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 仁济医生 -->
+    <div class="card">
+      <h3 style="margin-top:0;">仁济医院 · 生殖医学中心</h3>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">孙</div>
+        <div class="doctor-info">
+          <div class="doctor-name">孙贇 <span class="tag tag-primary">主任医师</span> <span class="tag tag-accent">科室主任</span></div>
+          <div class="doctor-title">教授 / 博士生导师 / 二级教授</div>
+          <div class="doctor-specialty">生殖中心主任，科研临床并重</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">洪</div>
+        <div class="doctor-info">
+          <div class="doctor-name">洪燕 <span class="tag tag-primary">主任医师</span></div>
+          <div class="doctor-title">医学博士 / 生殖医学科副主任 / 实验室负责人</div>
+          <div class="doctor-specialty">多囊卵巢综合征、反复胚胎着床失败、子宫内膜异位症、复发性流产</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">徐</div>
+        <div class="doctor-info">
+          <div class="doctor-name">徐冰 <span class="tag tag-neutral">医生</span></div>
+          <div class="doctor-specialty">活跃于患者社区科普</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">陈</div>
+        <div class="doctor-info">
+          <div class="doctor-name">陈军玲 <span class="tag tag-neutral">医生</span></div>
+          <div class="doctor-specialty">患者反馈耐心细致</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">傅</div>
+        <div class="doctor-info">
+          <div class="doctor-name">傅薇 <span class="tag tag-neutral">医生</span></div>
+          <div class="doctor-specialty">分享一代试管全流程科普、医保政策解读</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 红房子医生 -->
+    <div class="card">
+      <h3 style="margin-top:0;">红房子医院（复旦妇产科） · 生殖中心</h3>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">董</div>
+        <div class="doctor-info">
+          <div class="doctor-name">董曦 <span class="tag tag-neutral">医生</span></div>
+          <div class="doctor-specialty">活跃于患者社区科普，试管费用科普、成功因素分析</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 国妇婴医生 -->
+    <div class="card">
+      <h3 style="margin-top:0;">国妇婴 · 生殖医学中心</h3>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">王</div>
+        <div class="doctor-info">
+          <div class="doctor-name">王丽 <span class="tag tag-primary">副主任医师</span></div>
+          <div class="doctor-specialty">分享试管经验科普</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 一妇婴医生 -->
+    <div class="card">
+      <h3 style="margin-top:0;">一妇婴 · 辅助生殖医学科</h3>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">滕</div>
+        <div class="doctor-info">
+          <div class="doctor-name">滕晓明 <span class="tag tag-primary">主任医师</span> <span class="tag tag-accent">学科带头人</span></div>
+          <div class="doctor-specialty">中华医学会生殖医学分会重要成员</div>
+        </div>
+      </div>
+
+      <div class="doctor-item">
+        <div class="doctor-avatar">艾</div>
+        <div class="doctor-info">
+          <div class="doctor-name">艾爱 <span class="tag tag-neutral">医生</span></div>
+          <div class="doctor-specialty">胚胎移植时机把握和内膜准备方面有经验</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Lab -->
+  <section id="lab">
+    <h2><span class="icon">6</span> 实验室：IVF 的隐形核心</h2>
+    <p style="color:var(--text-secondary);margin-bottom:20px;">患者选择医院时，往往关注医生，但 <strong>胚胎实验室的水平才是决定 IVF 上限的核心</strong>。</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <strong>胚胎师</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">操作取卵、受精、胚胎培养的胚胎师直接决定胚胎质量。经验丰富的胚胎师能让同样条件下的卵子获得更高的受精率和囊胚率。</p>
+      </div>
+      <div class="card">
+        <strong>囊胚培养能力</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">囊胚（第 5-6 天胚胎）的着床率高于卵裂期胚胎（第 3 天）。能将更多胚胎培养至囊胚阶段的实验室，整体成功率更高。</p>
+      </div>
+      <div class="card">
+        <strong>冷冻复苏率</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">冷冻胚胎的复苏成功率是实验室技术的重要指标。成熟实验室的复苏率应稳定在 95% 以上。</p>
+      </div>
+      <div class="card">
+        <strong>实验室稳定性</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">大型中心如九院、仁济等，实验室流程成熟、质控体系完善，不同批次之间的结果波动较小。</p>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      <span class="alert-icon">💡</span>
+      <div>你看到的以上几家第一梯队医院，实验室水平都经过了大量病例的检验，可以放心选择。不必过度担心实验室质量问题。</div>
+    </div>
+  </section>
+
+  <!-- Section 7: Process -->
+  <section id="process">
+    <h2><span class="icon">7</span> 完整流程与时间表</h2>
+    <p style="color:var(--text-secondary);margin-bottom:20px;">一代试管从前期检查到验孕成功，通常耗时 <strong>2-3 个月</strong>。</p>
+
+    <div class="card">
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <h4>Step 1：前期检查</h4>
+          <div class="duration">约 1-2 个月经周期 | 需到院 2-4 次</div>
+          <p>夫妻双方全面体检，评估生育能力和排除禁忌症。女方检查分月经期和非月经期两次完成。</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Step 2：建档</h4>
+          <div class="duration">1 天 | 夫妻双方同时到场</div>
+          <p>携带身份证、结婚证原件，签署知情同意书，建立病历档案。医生根据女方卵巢功能确定促排方案。</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Step 3：促排卵</h4>
+          <div class="duration">8-14 天 | 需到院 4-6 次（每 2-3 天一次）</div>
+          <p>月经第 2-3 天开始注射促排药物。期间每 2-3 天回院 B 超监测卵泡大小、抽血检测激素水平。当 1-2 个优势卵泡 &ge;18mm 时，停止促排，注射"夜针"（HCG）。</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Step 4：取卵 & 取精</h4>
+          <div class="duration">夜针后约 36 小时 | 需半天时间</div>
+          <p>女方在阴道 B 超引导下经阴道穿刺取卵（全麻或局麻，约 10-20 分钟），男方同时取精。</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Step 5：胚胎培养</h4>
+          <div class="duration">3-5 天 | 实验室阶段，无需到院</div>
+          <p>精卵在培养皿中自然结合（一代特点）。第 3 天发育为卵裂期胚胎（4-8 细胞），也可继续培养至第 5-6 天形成囊胚。</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Step 6：胚胎移植</h4>
+          <div class="duration">1 天 | 需半天时间</div>
+          <p><strong>鲜胚移植：</strong>取卵后第 3 天进行。<br>
+            <strong>冻胚移植：</strong>如有卵巢过度刺激风险或子宫内膜不佳，休息 1-2 个月后冻胚移植。</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Step 7：黄体支持 & 验孕</h4>
+          <div class="duration">移植后 10-14 天</div>
+          <p>使用黄体酮等药物进行黄体支持。移植后 10-14 天抽血检测 &beta;-HCG 确认是否怀孕，28 天左右 B 超确认宫内孕及胎心。</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      <span class="alert-icon">📅</span>
+      <div><strong>到院总次数：</strong>约 11-15 次。不需要辞职，合理安排请假即可。<br>
+        促排期最密集（约需请假 5-7 天），其余阶段每次半天即可。</div>
+    </div>
+  </section>
+
+  <!-- Section 8: Pre-checks -->
+  <section id="checks">
+    <h2><span class="icon">8</span> 前置检查清单</h2>
+
+    <h3>女方检查项目</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>检查时间</th><th>项目</th><th>目的</th></tr></thead>
+        <tbody>
+          <tr><td>月经第 2-4 天</td><td>性激素六项（FSH、LH、E2、P、T、PRL）</td><td>评估卵巢储备功能</td></tr>
+          <tr><td>月经第 2-4 天</td><td>AMH（抗缪勒管激素）</td><td>评估卵巢储备，不受月经影响</td></tr>
+          <tr><td>月经第 2-4 天</td><td>阴道 B 超（基础卵泡数 AFC）</td><td>计数基础卵泡</td></tr>
+          <tr><td>月经干净后 3-7 天</td><td>白带常规、宫颈刮片（TCT）</td><td>排除阴道/宫颈感染</td></tr>
+          <tr><td>任意时间</td><td>血常规、凝血功能、肝肾功能</td><td>评估全身健康状况</td></tr>
+          <tr><td>任意时间</td><td>传染病筛查（乙肝、丙肝、梅毒、HIV）</td><td>必查项目</td></tr>
+          <tr><td>任意时间</td><td>甲状腺功能（TSH、FT3、FT4）</td><td>甲状腺功能影响妊娠</td></tr>
+          <tr><td>任意时间</td><td>血型（ABO + Rh）</td><td>建档必备</td></tr>
+          <tr><td>任意时间</td><td>心电图</td><td>评估心脏功能</td></tr>
+          <tr><td>任意时间</td><td>染色体核型分析</td><td>排除遗传异常</td></tr>
+          <tr><td>已有</td><td>输卵管造影</td><td>已确认"通而极不畅"</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>男方检查项目</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>检查时间</th><th>项目</th><th>目的</th></tr></thead>
+        <tbody>
+          <tr><td>禁欲 3-7 天后</td><td>精液常规分析</td><td>评估精子数量、活力、形态</td></tr>
+          <tr><td>禁欲 3-7 天后</td><td>精子形态学分析</td><td>评估正常形态比例</td></tr>
+          <tr><td>任意时间</td><td>血常规、肝肾功能</td><td>评估全身健康</td></tr>
+          <tr><td>任意时间</td><td>传染病筛查</td><td>同女方，必查</td></tr>
+          <tr><td>任意时间</td><td>血型（ABO + Rh）</td><td>建档必备</td></tr>
+          <tr><td>已有</td><td>（确认正常）</td><td>已检查正常</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-success">
+      <span class="alert-icon">✅</span>
+      <div><strong>好消息：</strong>你提到双方其他检查都做过了且正常，可以大幅缩短前期检查时间。建议携带已有检查报告直接就诊，医生会根据有效期判断哪些需要复查（一般检查有效期 6-12 个月）。</div>
+    </div>
+  </section>
+
+  <!-- Section 9: Cost -->
+  <section id="cost">
+    <h2><span class="icon">9</span> 费用明细与医保政策</h2>
+
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="num">3-5万</div>
+        <div class="label">单周期总费用（参考范围）</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">部分报销</div>
+        <div class="label">医保政策</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">5-8万</div>
+        <div class="label">多次移植累计（含冻胚）</div>
+      </div>
+    </div>
+
+    <h3>费用构成</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>项目</th><th>费用（元）</th><th>医保</th></tr></thead>
+        <tbody>
+          <tr><td>前期检查费</td><td>3,000 - 6,000</td><td>部分可报销</td></tr>
+          <tr><td>促排卵药物</td><td>5,000 - 15,000</td><td>部分报销（国产药可报，进口药自费比例高）</td></tr>
+          <tr><td>取卵手术费</td><td>3,000 - 5,000</td><td>纳入医保</td></tr>
+          <tr><td>胚胎培养费</td><td>3,000 - 5,000</td><td>纳入医保</td></tr>
+          <tr><td>胚胎移植费</td><td>3,000 - 5,000</td><td>纳入医保</td></tr>
+          <tr><td>黄体支持药物</td><td>1,000 - 3,000</td><td>部分可报销</td></tr>
+          <tr><td>胚胎冷冻费（如需）</td><td>2,000 - 4,000</td><td>自费</td></tr>
+          <tr><td>胚胎年保存费</td><td>1,000 - 2,000/年</td><td>自费</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-success">
+      <span class="alert-icon">🏥</span>
+      <div><strong>上海医保政策（2024年6月起实施）：</strong><br>
+        取卵手术、胚胎培养、胚胎移植等 13 项辅助生殖诊疗项目已纳入上海医保报销范围。<br>
+        纳入医保的项目可按医保政策报销。但由于<strong>进口促排药物、冷冻保存、部分特殊检测和耗材仍需自费</strong>，患者最终自付比例因方案差异较大。<br>
+        具体报销金额因医保类型（职工/居民）和医院而异，建议就诊时咨询医院医保办。</div>
+    </div>
+
+    <div class="alert alert-info">
+      <span class="alert-icon">💰</span>
+      <div><strong>省钱建议：</strong><br>
+        1. 优先选择国产促排药物（效果相近，价格便宜很多）<br>
+        2. 前期检查尽量在社区医院完成（可走医保）<br>
+        3. 一次促排获取的卵子可培养多个胚胎，多余的冷冻备用，避免二次促排</div>
+    </div>
+  </section>
+
+  <!-- Section 10: Tips -->
+  <section id="tips">
+    <h2><span class="icon">10</span> 注意事项与患者经验</h2>
+
+    <h3>促排期间</h3>
+    <div class="card-grid">
+      <div class="card">
+        <strong>按时打针</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">每天固定时间注射促排药物，不可自行停药或改量。可学习自行注射（腹部皮下），省去每天跑医院的麻烦。</p>
+      </div>
+      <div class="card">
+        <strong>饮食建议</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">高蛋白饮食（鱼、虾、蛋、奶），多喝豆浆，避免辛辣刺激。促排后期多吃利尿食物防腹水。</p>
+      </div>
+      <div class="card">
+        <strong>避免剧烈运动</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">促排期间卵巢增大，剧烈运动可能导致卵巢扭转。散步、瑜伽等轻度运动可以。</p>
+      </div>
+      <div class="card">
+        <strong>心态管理</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">患者社区共识：佛系心态反而更容易成功。过度焦虑会影响内分泌，进而影响卵泡质量。</p>
+      </div>
+    </div>
+
+    <h3>取卵前后</h3>
+    <div class="alert alert-warn">
+      <span class="alert-icon">⚠️</span>
+      <div><strong>取卵当天注意事项：</strong><br>
+        - 穿宽松、清洁的内衣裤<br>
+        - 不要化妆、不喷香水、不涂指甲油<br>
+        - 不要佩戴首饰<br>
+        - 取卵前禁同房<br>
+        - 夫妻双方注意清洗外阴<br>
+        - 取卵后按揉腹部是<strong>错误做法</strong>，不要热敷下腹部</div>
+    </div>
+
+    <div class="alert alert-info">
+      <span class="alert-icon">💡</span>
+      <div><strong>关于 OHSS（卵巢过度刺激综合征）：</strong>九院的 PPOS（孕激素促排卵方案）可<strong>显著降低</strong> OHSS 风险，但并非完全没有风险。高 AMH、多囊卵巢综合征（PCOS）或超高反应的患者仍需注意监测。</div>
+    </div>
+
+    <h3>移植前后</h3>
+    <div class="card-grid">
+      <div class="card">
+        <strong>移植前憋尿</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">移植前适当憋尿，便于 B 超引导下准确放置胚胎。但不要过度憋尿导致不适。</p>
+      </div>
+      <div class="card">
+        <strong>移植后不要躺着一动不动</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">适度活动有助于血液循环。正常生活即可，避免重体力劳动和剧烈运动。</p>
+      </div>
+      <div class="card">
+        <strong>黄体支持不能停</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">按时使用黄体酮（口服/塞药/注射），即使验孕成功也不能自行停药，遵医嘱逐步减量。</p>
+      </div>
+      <div class="card">
+        <strong>不要太早验孕</strong>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">移植后 10-14 天抽血最准确。过早用试纸可能因 <strong>HCG 夜针残留</strong> 出现假阳性，徒增焦虑。</p>
+      </div>
+    </div>
+
+    <h3>来自患者社区的真实经验</h3>
+    <div class="card">
+      <ul style="padding-left:20px;">
+        <li style="margin:10px 0;"><strong>"做试管其实不用辞职"</strong> — 整个周期到院约 11 次，合理安排请假即可。促排期最密集，其余阶段每次半天。</li>
+        <li style="margin:10px 0;"><strong>"试管婴儿最痛苦的环节"</strong> — 多数患者认为是每天打针和等待验孕的 14 天，取卵过程（全麻）并不痛苦。</li>
+        <li style="margin:10px 0;"><strong>"接好孕"心态</strong> — 患者社区中，"佛系"心态被反复提及为成功的重要因素之一。</li>
+        <li style="margin:10px 0;"><strong>"这样沟通省钱又省心"</strong> — 与医生充分沟通自己的情况，明确表达诉求，避免不必要的检查和治疗。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 11: FAQ -->
+  <section id="faq">
+    <h2><span class="icon">11</span> 常见问题</h2>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--primary);">Q：34 岁做一代试管成功率如何？</h3>
+      <p>A：34 岁处于较好年龄段。在优质生殖中心中，<strong>单次胚胎移植临床妊娠率</strong> 通常约 50-65%。但需注意：临床妊娠率 ≠ 活产率，实际最终成功分娩的比例会低于临床妊娠率。如果有多个胚胎可多次移植，<strong>累计成功率</strong>会显著提高。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--primary);">Q：一次就能成功吗？</h3>
+      <p>A：不一定。单次移植临床妊娠率约 50-65%，但如果有多个胚胎可多次移植，累计成功率可达 80% 以上。34 岁的年龄优势很大，多数人在 1-2 次移植内成功。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--primary);">Q：选鲜胚还是冻胚移植？</h3>
+      <p>A：医生会根据取卵后的激素水平和内膜情况判断。如果身体条件适合（内膜厚度达标、无过度刺激风险），鲜胚移植成功率和冻胚相当。如果条件不佳，冻胚移植反而更好。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--primary);">Q：选哪个医院/医生最合适？</h3>
+      <p>A：综合你的情况（34 岁、输卵管问题、双方其他检查正常），建议优先从<strong>第一梯队</strong>中选择：<br><br>
+        <strong>九院</strong> — 促排方案灵活、量大经验足、性价比高，适合追求效率的人<br>
+        <strong>仁济</strong> — 国际认证、体系规范、多院区分散流量，适合注重流程质量的人<br>
+        <strong>红房子</strong> — 历史底蕴深厚、遗传学强，适合有遗传筛查需求或反复失败的人<br><br>
+        以上几家都是第一梯队，不存在绝对的高下之分，选择哪家更多取决于你对就医体验的偏好。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--primary);">Q：需要提前准备什么？</h3>
+      <p>A：
+        <ul style="padding-left:20px;margin-top:8px;">
+          <li>双方身份证、结婚证原件（建档必备）</li>
+          <li>带上已有的所有检查报告</li>
+          <li>提前在医院官方渠道（公众号/APP）预约生殖科号</li>
+          <li>女方开始补充叶酸（0.4mg/天）</li>
+          <li>双方戒烟戒酒，规律作息</li>
+          <li>女方第一次就诊建议在月经第 2-3 天</li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--primary);">Q：试管过程痛苦吗？</h3>
+      <p>A：
+        <ul style="padding-left:20px;margin-top:8px;">
+          <li><strong>打针：</strong>促排针为皮下注射，针头极细，疼痛轻微，多数人可接受</li>
+          <li><strong>取卵：</strong>全麻下无痛感，术后可能有轻微腹胀</li>
+          <li><strong>移植：</strong>无需麻醉，过程 5-10 分钟，像做 B 超一样</li>
+          <li><strong>最"痛苦"的部分：</strong>每天打针的繁琐 + 等待验孕的心理压力</li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--primary);">Q：什么时候确定主治医生？是先做检查还是先看医生？</h3>
+      <p>A：这是初诊时最容易困惑的问题，正确答案是：<strong>先看医生，由医生开检查单。</strong></p>
+
+      <h4 style="margin:16px 0 10px;color:var(--text);">标准流程：</h4>
+      <div class="timeline" style="margin-left:8px;">
+        <div class="timeline-item">
+          <h4>Step 1：初诊挂号</h4>
+          <div class="duration">挂生殖科的号（普通号或副主任医师均可）</div>
+          <p>医生了解病史后开出检查单。<strong>初诊不需要锁定最终的主治医生</strong>，同科室任何一位生殖科医生都可以开检查单。</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Step 2：做检查</h4>
+          <div class="duration">按检查单逐项完成（1-2 个月经周期）</div>
+          <p>女方检查分月经期和非月经期两次完成，男方禁欲 3-7 天后检查精液。检查在全院范围内通用。</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Step 3：复诊看结果</h4>
+          <div class="duration">检查结果全部出来后，挂同一科室的号复诊</div>
+          <p>医生确认检查结果，评估是否适合进入试管流程。此时可以提出希望跟哪位医生的意愿。</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Step 4：建档</h4>
+          <div class="duration">夫妻双方带身份证 + 结婚证原件同时到场</div>
+          <p>签署知情同意书，建立病历档案。<strong>建档时通常会确定后续的主治医生或团队</strong>。</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Step 5：进入试管周期</h4>
+          <div class="duration">月经第 2-3 天开始促排</div>
+          <p>从建档到开始促排，通常等待 1-2 个周期即可。<strong>此时你的主治医生已经确定。</strong></p>
+        </div>
+      </div>
+
+      <div class="alert alert-success" style="margin-top:20px;">
+        <span class="alert-icon">💡</span>
+        <div><strong>你的捷径：</strong>因为你们双方检查都已经做过且正常，可以跳过 Step 1-2，直接挂一个<strong>目标专家号</strong>，带上已有报告去初诊。医生会判断哪些检查还在有效期内（一般 6-12 个月），只补做过期的，然后直接进入建档流程。</div>
+      </div>
+
+      <div class="alert alert-warn" style="margin-top:12px;">
+        <span class="alert-icon">⚠️</span>
+        <div><strong>关于号源：</strong>热门专家号比较难挂，如果目标专家号挂不上，<strong>挂同科室其他副主任医师的号开检查单也完全可以</strong>。检查结果全院通用，后续建档时可以再选择心仪的医生。不需要因为挂不上某个专家号而耽误检查进度。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final recommendation -->
+  <section>
+    <h2><span class="icon">⭐</span> 综合推荐方案</h2>
+    <div class="card" style="border:2px solid var(--primary);">
+      <h3 style="margin-top:0;color:var(--primary);">基于你的情况，建议路径</h3>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><td style="font-weight:600;width:160px;">推荐医院</td><td>上海第一梯队生殖中心（九院 / 仁济 / 红房子 均可）</td></tr>
+            <tr><td style="font-weight:600;">选择依据</td><td>就近优先，其次考虑就医体验偏好（效率 vs 规范 vs 遗传学）</td></tr>
+            <tr><td style="font-weight:600;">预估成功率</td><td>34 岁，单次移植临床妊娠率约 50-65%；累计多次移植成功率更高</td></tr>
+            <tr><td style="font-weight:600;">预估费用</td><td>单周期 3-5 万，纳入医保项目可部分报销，自付因方案而异</td></tr>
+            <tr><td style="font-weight:600;">总耗时</td><td>2-3 个月（从检查到验孕）</td></tr>
+            <tr><td style="font-weight:600;">到院次数</td><td>约 11-15 次</td></tr>
+            <tr><td style="font-weight:600;">第一步</td><td>月经第 2-3 天，带已有检查报告到目标医院生殖科初诊</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-success" style="margin-top:16px;">
+        <span class="alert-icon">🎯</span>
+        <div><strong>行动清单：</strong><br>
+          1. 确认下次月经来潮日期<br>
+          2. 提前在医院官方渠道（公众号/APP）预约生殖科号<br>
+          3. 整理已有检查报告<br>
+          4. 女方开始每日补充叶酸 0.4mg<br>
+          5. 双方调整作息，保持健康生活方式<br>
+          <strong>6. 尽快开始，不要过度纠结医院选择 — 年龄和卵巢储备比医院差距更重要</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <div class="alert alert-info" style="margin-bottom:40px;">
+    <span class="alert-icon">📝</span>
+    <div><strong>免责声明：</strong>本报告基于患者经验分享、好大夫在线公开评价、网络公开资料整理，仅供参考。成功率数据为行业统计参考范围，不同医院统计口径可能不同（临床妊娠率 / 移植妊娠率 / 活产率 / 累计活产率），个体差异较大。医疗决策请以就诊医院专业医生的建议为准。</div>
+  </div>
+
+</div>
+
+<footer>
+  <p>上海一代试管婴儿完整指南 &middot; 2026年5月 v2</p>
+  <p style="margin-top:8px;font-size:0.85rem;">数据来源：患者经验帖、好大夫在线、公开医疗资料</p>
+</footer>
+
+</body>
+</html>
