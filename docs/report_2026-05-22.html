@@ -4,206 +4,406 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 每日资讯日报 — 2026-05-22</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .section-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e5e7eb; }
-        .item-card { padding: 1rem; margin-bottom: 0.75rem; border: 1px solid #f3f4f6; border-radius: 0.5rem; background: #fafafa; }
-        .item-card:hover { background: #f0f7ff; border-color: #bfdbfe; }
-        .item-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
-        .item-title a { color: #1e40af; text-decoration: none; }
-        .item-title a:hover { text-decoration: underline; }
-        .item-meta { font-size: 0.75rem; color: #6b7280; margin-bottom: 0.375rem; }
-        .item-summary { font-size: 0.875rem; color: #374151; line-height: 1.6; }
-        .headline-card { padding: 1.25rem; margin-bottom: 1rem; border-left: 4px solid #dc2626; background: #fef2f2; border-radius: 0.375rem; }
-        .headline-card .item-title a { color: #991b1b; }
-        .headline-card:hover { background: #fee2e2; }
-        .quick-item { font-size: 0.875rem; padding: 0.5rem 0; border-bottom: 1px dashed #e5e7eb; }
-        .quick-item:last-child { border-bottom: none; }
-        .tag { display: inline-block; font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 9999px; margin-right: 0.375rem; }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #ffffff;
+            color: #1f2937;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 32px 20px;
+        }
+        header {
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.02em;
+        }
+        header .meta {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        section { margin-bottom: 40px; }
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #111827;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .section-count {
+            font-size: 13px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        .item {
+            padding: 16px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .item:last-child { border-bottom: none; }
+        .item:hover { background: #fafafa; margin: 0 -8px; padding: 16px 8px; border-radius: 6px; }
+        .item-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 6px 0;
+            line-height: 1.4;
+        }
+        .item-title a {
+            color: #111827;
+            text-decoration: none;
+        }
+        .item-title a:hover { color: #2563eb; }
+        .item-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 6px;
+        }
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 999px;
+            line-height: 1.4;
+        }
+        .tag-anthropic, .tag-openai, .tag-google, .tag-deepmind { background: #dbeafe; color: #1e40af; }
         .tag-hn { background: #fef3c7; color: #92400e; }
-        .tag-arxiv { background: #ede9fe; color: #5b21b6; }
-        .tag-techcrunch { background: #d1fae5; color: #065f46; }
+        .tag-reddit { background: #fee2e2; color: #991b1b; }
+        .tag-ph { background: #ede9fe; color: #6b21a8; }
+        .tag-tc { background: #d1fae5; color: #065f46; }
         .tag-verge { background: #fce7f3; color: #9d174d; }
+        .tag-other { background: #f3f4f6; color: #4b5563; }
+        .hotness { font-weight: 600; color: #dc2626; }
+        .item-summary {
+            font-size: 14px;
+            color: #374151;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .quick-list { list-style: none; padding: 0; margin: 0; }
+        .quick-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #e5e7eb;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .quick-list li:last-child { border-bottom: none; }
+        .quick-list a {
+            color: #111827;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .quick-list a:hover { color: #2563eb; text-decoration: underline; }
+        .empty {
+            text-align: center;
+            color: #9ca3af;
+            padding: 40px 0;
+            font-size: 14px;
+        }
+        footer {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 20px 16px; }
+            header h1 { font-size: 22px; }
+            .item-title { font-size: 15px; }
+        }
     </style>
 </head>
-<body class="bg-white text-gray-900">
-<div class="max-w-3xl mx-auto px-4 py-8">
+<body>
+<div class="container">
 
-    <!-- Header -->
-    <header class="mb-8">
-        <h1 class="text-2xl font-bold mb-1">AI 每日资讯日报</h1>
-        <p class="text-sm text-gray-500">2026-05-22 · 由 nanobot agent 自动生成</p>
+    <header>
+        <h1>🤖 AI 每日资讯</h1>
+        <div class="meta">2026-05-22 · 由 nanobot-mocha 自动生成</div>
     </header>
 
     
-    <!-- 头条 -->
-    <section class="mb-8">
-        <div class="section-title">🔥 头条</div>
-        
-        <div class="headline-card">
-            <div class="item-title">
-                <a href="https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/" target="_blank" rel="noopener">OpenAI claims it solved an 80-year-old math problem — for real this time</a>
-            </div>
-            <div class="item-meta">
-                <span class="tag tag-techcrunch">techcrunch</span>
-                · 9 points
-            </div>
-            <div class="item-summary">OpenAI声称其推理模型成功证明了一个自1946年以来未解决的几何猜想，且曾揭露其先前错误声明的数学家们这次支持该证明，标志着AI在数学推理领域的重大突破。</div>
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">📢 大厂动态</h2>
+            <span class="section-count">5 条</span>
         </div>
         
-        <div class="headline-card">
-            <div class="item-title">
-                <a href="https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/" target="_blank" rel="noopener">Anthropic says it's about to have its first profitable quarter</a>
-            </div>
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">Introducing Claude Opus 4.7</a>
+            </h3>
             <div class="item-meta">
-                <span class="tag tag-techcrunch">techcrunch</span>
-                · 8 points
+                <span class="tag tag-anthropic">Anthropic Blog</span>
+                <span class="hotness">🔥 85</span>
             </div>
-            <div class="item-summary">Anthropic告知投资者其第二季度收入将翻倍至约109亿美元，即将迎来首个盈利季度，显示AI公司在商业化道路上取得重要里程碑。</div>
-        </div>
+            <p class="item-summary">Anthropic发布最新Opus模型，在编码、智能体、视觉和多步骤任务上表现更强，对重要工作具有更高的彻底性和一致性。</p>
+        </article>
+        
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener">Introducing Claude Design by Anthropic Labs</a>
+            </h3>
+            <div class="item-meta">
+                <span class="tag tag-anthropic">Anthropic Blog</span>
+                <span class="hotness">🔥 80</span>
+            </div>
+            <p class="item-summary">Anthropic Labs推出Claude Design新产品，让用户与Claude协作创建精美的视觉作品，如设计、原型、幻灯片、单页文档等。</p>
+        </article>
+        
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.anthropic.com/news/anthropic-kpmg" target="_blank" rel="noopener">KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance</a>
+            </h3>
+            <div class="item-meta">
+                <span class="tag tag-anthropic">Anthropic Blog</span>
+                <span class="hotness">🔥 75</span>
+            </div>
+            <p class="item-summary">KPMG与Anthropic达成战略联盟，将在其核心业务和超过27.6万名员工中全面集成Claude AI。</p>
+        </article>
+        
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.anthropic.com/news/pwc-expanded-partnership" target="_blank" rel="noopener">PwC is deploying Claude to build technology, execute deals, and reinvent enterprise functions for clients</a>
+            </h3>
+            <div class="item-meta">
+                <span class="tag tag-anthropic">Anthropic Blog</span>
+                <span class="hotness">🔥 70</span>
+            </div>
+            <p class="item-summary">普华永道正在部署Claude来构建技术、执行交易并为客户重塑企业职能，扩大与Anthropic的合作关系。</p>
+        </article>
+        
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.anthropic.com/news/gates-foundation-partnership" target="_blank" rel="noopener">Anthropic forms $200 million partnership with the Gates Foundation</a>
+            </h3>
+            <div class="item-meta">
+                <span class="tag tag-anthropic">Anthropic Blog</span>
+                <span class="hotness">🔥 68</span>
+            </div>
+            <p class="item-summary">Anthropic与比尔及梅琳达·盖茨基金会达成2亿美元合作伙伴关系，共同推进AI发展。</p>
+        </article>
         
     </section>
     
 
     
-    <!-- 产业动态 -->
-    <section class="mb-8">
-        <div class="section-title">🏢 产业动态</div>
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">🎮 AI 产品与玩法</h2>
+            <span class="section-count">5 条</span>
+        </div>
         
-        <div class="item-card">
-            <div class="item-title">
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.producthunt.com/products/jamtime-ai" target="_blank" rel="noopener">JAMtime.ai - Just tell your guitar pedal how to sound</a>
+            </h3>
+            <div class="item-meta">
+                <span class="tag tag-ph">Product Hunt</span>
+                <span class="hotness">🔥 82</span>
+            </div>
+            <p class="item-summary">AI吉他效果踏板，用户只需告诉踏板想要的声音效果，AI就能生成相应的吉他音效，让音乐创作更加直观。</p>
+        </article>
+        
+        <article class="item">
+            <h3 class="item-title">
                 <a href="https://techcrunch.com/2026/05/21/spotify-and-universal-music-strike-deal-allowing-fan-made-ai-covers-and-remixes/" target="_blank" rel="noopener">Spotify and Universal Music strike deal allowing fan-made AI covers and remixes</a>
-            </div>
+            </h3>
             <div class="item-meta">
-                <span class="tag tag-techcrunch">techcrunch</span>
-                · 7 points
+                <span class="tag tag-tc">TechCrunch</span>
+                <span class="hotness">🔥 78</span>
             </div>
-            <div class="item-summary">Spotify与环球音乐集团达成许可协议，允许Premium订阅用户通过AI生成歌曲翻唱和混音，参与艺术家将获得收入分成，为AI音乐创作开辟合法商业化路径。</div>
-        </div>
+            <p class="item-summary">Spotify与环球音乐达成协议，允许Premium订阅者创建AI生成的歌曲翻唱和混音，参与艺术家将获得收入分成。</p>
+        </article>
         
-        <div class="item-card">
-            <div class="item-title">
-                <a href="https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/" target="_blank" rel="noopener">Hark raises $700M Series A for its secretive 'universal' AI interface</a>
-            </div>
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://github.com/superset-sh/superset" target="_blank" rel="noopener">Superset (YC P26) – IDE for the agents era</a>
+            </h3>
             <div class="item-meta">
-                <span class="tag tag-techcrunch">techcrunch</span>
-                · 7 points
+                <span class="tag tag-hn">Hacker News</span>
+                <span class="hotness">🔥 75</span>
             </div>
-            <div class="item-summary">Hark完成7亿美元A轮融资，计划今夏发布多模态模型，打造能与现有产品和服务协同工作的个人AI平台，后续将推出专用硬件设备。</div>
-        </div>
+            <p class="item-summary">YC孵化的Superset项目，专为智能体时代设计的集成开发环境，帮助开发者更好地构建和管理AI智能体。</p>
+        </article>
         
-        <div class="item-card">
-            <div class="item-title">
-                <a href="https://techcrunch.com/2026/05/20/jensen-huang-says-hes-found-a-brand-new-200b-market-for-nvidia/" target="_blank" rel="noopener">Jensen Huang says he's found a 'brand new' $200B market for Nvidia</a>
-            </div>
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.reddit.com/r/MachineLearning/comments/1tkejqr/nuextract3_released_openweight_4b_vlm_for/" target="_blank" rel="noopener">NuExtract3 released: open-weight 4B VLM for Markdown, OCR and structured extraction</a>
+            </h3>
             <div class="item-meta">
-                <span class="tag tag-techcrunch">techcrunch</span>
-                · 8 points
+                <span class="tag tag-reddit">Reddit r/MachineLearning</span>
+                <span class="hotness">🔥 72</span>
             </div>
-            <div class="item-summary">英伟达CEO黄仁勋预测AI代理CPU将成为价值2000亿美元的新市场，为公司开辟了继GPU之后的又一重要增长领域。</div>
-        </div>
+            <p class="item-summary">Numind发布NuExtract3开源4B视觉语言模型，专为Markdown、OCR和结构化提取设计，可从复杂文档中提取信息。</p>
+        </article>
         
-        <div class="item-card">
-            <div class="item-title">
-                <a href="https://techcrunch.com/2026/05/20/xai-burned-6-4b-last-year-spacexs-ipo-filing-shows-why-the-spending-is-far-from-over/" target="_blank" rel="noopener">xAI burned $6.4B last year — SpaceX's IPO filing shows why the spending is far from over</a>
-            </div>
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.reddit.com/r/artificial/comments/1tjpywq/i_built_a_zerocode_visual_client_to_test_remote/" target="_blank" rel="noopener">I built a zero-code visual client to test remote MCP servers instantly</a>
+            </h3>
             <div class="item-meta">
-                <span class="tag tag-techcrunch">techcrunch</span>
-                · 7 points
+                <span class="tag tag-reddit">Reddit r/artificial</span>
+                <span class="hotness">🔥 65</span>
             </div>
-            <div class="item-summary">SpaceX的IPO文件显示xAI在2025年亏损64亿美元，同时计划大规模扩展Grok，首次公开披露马斯克AI业务的财务状况和雄心。</div>
-        </div>
-        
-        <div class="item-card">
-            <div class="item-title">
-                <a href="https://www.runtm.com/" target="_blank" rel="noopener">Launch HN: Runtime (YC P26) – Sandboxed coding agents for everyone on a team</a>
-            </div>
-            <div class="item-meta">
-                <span class="tag tag-hn">hackernews</span>
-                · 6 points
-            </div>
-            <div class="item-summary">Runtime推出团队用沙盒编码代理平台，让每个团队成员都能安全使用AI编码助手，解决企业级AI协作的安全和可扩展性问题。</div>
-        </div>
+            <p class="item-summary">零代码可视化客户端，用于即时测试远程MCP（模型上下文协议）服务器，简化AI智能体与数据源的连接测试。</p>
+        </article>
         
     </section>
     
 
     
-    <!-- 学术前沿 -->
-    <section class="mb-8">
-        <div class="section-title">📚 学术前沿</div>
-        
-        <div class="item-card">
-            <div class="item-title">
-                <a href="https://arxiv.org/abs/2605.12460" target="_blank" rel="noopener">Multi-Stream LLMs: new paper on parallelizing/separating prompts, thinking, I/O</a>
-            </div>
-            <div class="item-meta">
-                <span class="tag tag-hn">hackernews</span>
-            </div>
-            <div class="item-summary">多流LLM论文提出并行化/分离提示、思考和I/O的新架构，有望显著提升大型语言模型的推理效率和响应速度。</div>
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">💬 热门讨论</h2>
+            <span class="section-count">5 条</span>
         </div>
         
-        <div class="item-card">
-            <div class="item-title">
-                <a href="https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/" target="_blank" rel="noopener">OpenAI claims it solved an 80-year-old math problem — for real this time</a>
-            </div>
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.reddit.com/r/artificial/comments/1tke8wl/ai_training_is_becoming_the_new_coding_revolution/" target="_blank" rel="noopener">AI training is becoming the new coding revolution</a>
+            </h3>
             <div class="item-meta">
-                <span class="tag tag-techcrunch">techcrunch</span>
+                <span class="tag tag-reddit">Reddit r/artificial</span>
+                <span class="hotness">🔥 85</span>
             </div>
-            <div class="item-summary">OpenAI的推理模型成功证明了一个80年未解的几何猜想，获得数学界认可，展示了AI在形式数学证明领域的突破性进展。</div>
-        </div>
+            <p class="item-summary">社区讨论AI训练正变得像编程一样普及，开发者可以租用GPU以每小时几美元的价格微调开源模型，AI训练门槛大幅降低。</p>
+        </article>
+        
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.reddit.com/r/artificial/comments/1tk6mjs/multiagent_ai_systems_are_now_automating/" target="_blank" rel="noopener">Multi-agent AI systems are now automating scientific discovery and nobody seems ready</a>
+            </h3>
+            <div class="item-meta">
+                <span class="tag tag-reddit">Reddit r/artificial</span>
+                <span class="hotness">🔥 80</span>
+            </div>
+            <p class="item-summary">讨论多智能体AI系统正在自动化科学发现，这些系统能形成假设、设计实验并迭代，引发对科学方法未来的广泛思考。</p>
+        </article>
+        
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.reddit.com/r/artificial/comments/1tkb6p9/rethinking_ai_bubble/" target="_blank" rel="noopener">Rethinking AI Bubble</a>
+            </h3>
+            <div class="item-meta">
+                <span class="tag tag-reddit">Reddit r/artificial</span>
+                <span class="hotness">🔥 75</span>
+            </div>
+            <p class="item-summary">重新思考AI泡沫问题，分析OpenAI和Anthropic的估值合理性，讨论AI行业是否真的存在泡沫风险。</p>
+        </article>
+        
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.reddit.com/r/MachineLearning/comments/1tkauvf/one_thing_thats_been_bothering_me_lately/" target="_blank" rel="noopener">One thing that's been bothering me lately: benchmark performance often tells me almost nothing about whether a workflow will survive production usage</a>
+            </h3>
+            <div class="item-meta">
+                <span class="tag tag-reddit">Reddit r/MachineLearning</span>
+                <span class="hotness">🔥 72</span>
+            </div>
+            <p class="item-summary">机器学习从业者讨论基准测试的局限性，指出清洁任务优化与实际生产环境中的行为鲁棒性之间存在差距。</p>
+        </article>
+        
+        <article class="item">
+            <h3 class="item-title">
+                <a href="https://www.reddit.com/r/artificial/comments/1tke1cj/claude_made_me_realize_most_ai_models_optimize/" target="_blank" rel="noopener">Claude made me realize most AI models optimize for confidence, not truth</a>
+            </h3>
+            <div class="item-meta">
+                <span class="tag tag-reddit">Reddit r/artificial</span>
+                <span class="hotness">🔥 68</span>
+            </div>
+            <p class="item-summary">用户通过使用Claude发现大多数AI模型优化的是置信度而非真实性，引发对AI真实性和可靠性的深入讨论。</p>
+        </article>
         
     </section>
     
 
     
-    <!-- 社区热议 -->
-    <section class="mb-8">
-        <div class="section-title">💬 社区热议</div>
-        
-        <div class="item-card">
-            <div class="item-title">
-                <a href="https://qz.com/samsung-chip-workers-bonus-ai-profits-052126" target="_blank" rel="noopener">Samsung chip workers will get an average $340k bonus as AI profits soar</a>
-            </div>
-            <div class="item-meta">
-                <span class="tag tag-hn">hackernews</span>
-                · 7 points
-            </div>
-            <div class="item-summary">三星芯片员工因AI芯片需求激增和利润飙升，将获得平均34万美元的巨额奖金，反映了AI硬件市场的火爆和人才争夺战。</div>
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">⚡ 一句话快讯</h2>
+            <span class="section-count">10 条</span>
         </div>
-        
-        <div class="item-card">
-            <div class="item-title">
-                <a href="https://www.0xsid.com/blog/antigravity-bait-n-switch" target="_blank" rel="noopener">Google's Antigravity bait and switch</a>
-            </div>
-            <div class="item-meta">
-                <span class="tag tag-hn">hackernews</span>
-                · 6 points
-            </div>
-            <div class="item-summary">社区讨论谷歌在AI产品推广中的策略变化，批评其过度营销和实际交付之间的差距，反映了用户对AI产品透明度的关注。</div>
-        </div>
-        
-        <div class="item-card">
-            <div class="item-title">
-                <a href="https://noslopgrenade.com/" target="_blank" rel="noopener">Throwing AI-generated walls of text into conversations</a>
-            </div>
-            <div class="item-meta">
-                <span class="tag tag-hn">hackernews</span>
-                · 6 points
-            </div>
-            <div class="item-summary">讨论在对话中过度使用AI生成文本的现象，探讨AI内容对人际交流质量和真实性的影响，以及如何平衡AI辅助与人类互动。</div>
-        </div>
-        
+        <ul class="quick-list">
+            
+            <li>
+                <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tkfvvj/deepseek_is_pushing_forward_with_1029_billion/" target="_blank" rel="noopener">DeepSeek is pushing forward with $10.29 billion financing round</a>
+                 — 深度求索正在推进102.9亿美元融资轮，创始人梁文锋承诺继续开发开源AI模型而非追求短期商业化目标。
+            </li>
+            
+            <li>
+                <a href="https://www.newyorker.com/news/letter-from-silicon-valley/sam-altman-won-in-court-against-elon-musk-but-really-we-all-lost" target="_blank" rel="noopener">Sam Altman Won in Court Against Elon Musk. But, We All Lost</a>
+                 — Sam Altman在法庭上战胜Elon Musk，但评论认为这场诉讼让整个AI行业受损，分散了本应用于技术发展的精力。
+            </li>
+            
+            <li>
+                <a href="https://www.reddit.com/r/artificial/comments/1tkb0op/microsoft_cancels_internal_anthropic_licenses_as/" target="_blank" rel="noopener">Microsoft Cancels Internal Anthropic Licenses As Shift To Token-Based AI Billing Blows Up Annual Budgets In Months</a>
+                 — 微软取消内部Anthropic许可证，因基于令牌的AI计费模式在几个月内就耗尽了年度预算，反映AI使用成本问题。
+            </li>
+            
+            <li>
+                <a href="https://www.reddit.com/r/artificial/comments/1tjv204/college_graduation_ceremony_erupts_in_boos_after/" target="_blank" rel="noopener">College Graduation Ceremony Erupts In Boos After 'New AI System' Allegedly Misses 'Hundreds' Of Graduates' Names</a>
+                 — 大学毕业典礼因新AI系统漏读数百名毕业生名字而引发嘘声，反映AI在重要场合应用的可靠性问题。
+            </li>
+            
+            <li>
+                <a href="https://www.reddit.com/r/artificial/comments/1tjywfy/starbucks/" target="_blank" rel="noopener">Starbucks retires AI-powered inventory system across North American stores</a>
+                 — 星巴克在北美门店停用AI驱动的库存系统，该系统使用计算机视觉和AR平板扫描货架，但实施不到一年即被淘汰。
+            </li>
+            
+            <li>
+                <a href="https://techcrunch.com/2026/05/21/trump-delays-ai-security-executive-order-i-dont-want-to-get-in-the-way-of-that-leading/" target="_blank" rel="noopener">Trump delays AI security executive order, saying language 'could have been a blocker'</a>
+                 — 特朗普推迟签署要求AI模型发布前进行政府安全审查的行政命令，称命令语言可能成为阻碍。
+            </li>
+            
+            <li>
+                <a href="https://www.theverge.com/tech/936073/ai-writing-granta-commonwealth-prize" target="_blank" rel="noopener">The literary world isn't prepared for AI</a>
+                 — 文学界对AI准备不足，英联邦短篇小说奖获奖作品疑似由AI撰写，引发对文学创作真实性的担忧。
+            </li>
+            
+            <li>
+                <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tjmlft/qwen_37_max/" target="_blank" rel="noopener">Qwen 3.7 Max looks impressive, Chinese labs catching up with western frontier labs</a>
+                 — 通义千问3.7 Max表现令人印象深刻，显示中国实验室正在追赶西方前沿实验室，社区期待开源权重发布。
+            </li>
+            
+            <li>
+                <a href="https://www.reddit.com/r/artificial/comments/1tjy19a/owasp_published_its_first_top_10_for_ai_agents_88/" target="_blank" rel="noopener">OWASP published its first Top 10 for AI Agents</a>
+                 — OWASP发布首个AI智能体Top 10安全风险清单，88%的企业去年已报告AI智能体安全事件。
+            </li>
+            
+            <li>
+                <a href="https://www.reddit.com/r/artificial/comments/1tixhbv/an_openai_model_has_disproved_a_central/" target="_blank" rel="noopener">An OpenAI model has disproved a central conjecture in discrete geometry</a>
+                 — OpenAI模型推翻了离散几何中的一个核心猜想，展示AI在数学研究中的突破性应用。
+            </li>
+            
+        </ul>
     </section>
     
 
     
 
-    
-
-    <footer class="text-center text-xs text-gray-400 mt-12 pt-4 border-t">
-        Generated by nanobot · Powered by deepseek-v3.2
+    <footer>
+        Generated by nanobot-mocha · Powered by deepseek-v3.2
     </footer>
 
 </div>
